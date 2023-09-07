@@ -9,6 +9,15 @@ License:      GNU General Public License v2 or later
 License URI:  http://www.gnu.org/licenses/gpl-2.0.html
 */
 
+/* custom post styles */
+#custom_posts {
+    margin-bottom: 5rem;
+}
+@media(max-width:767px) {
+    #custom_posts {
+        margin-bottom: 2rem;
+    }
+}
 .custom-section-title {
     text-align: center;
     margin-bottom: 1em;
@@ -29,7 +38,7 @@ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
     border-radius: 5px;
     padding: 4px;
     text-align: center;
-    padding-bottom: 7px;    
+    padding-bottom: 7px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -50,11 +59,6 @@ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
     transition: all 0.2s ease-in-out;
 }
 
-.custom_posts_card__button {
-    /* position: absolute;
-    bottom: 0; */
-}
-
 .custom_posts_card__button a {
     background-color: #eeeeee;
     color: #333333;
@@ -73,7 +77,7 @@ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
 }
 
 .custom_posts_card__image {
-    height: 33%;
+    height: 10rem;
 }
 
 .custom_posts_card__image:hover {
@@ -106,4 +110,69 @@ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
         width: 100%;
         margin-bottom: 60px;
     }
+
+    .n2_clear {
+        margin-bottom: 60px;
+    }
+}
+
+@media (max-width: 500px) {
+    .n2_clear {
+        margin-bottom: -20px;
+    }
+}
+
+@media (max-width: 400px) {
+    .n2_clear {
+        margin-bottom: 30px;
+    }
+}
+
+/* remove catagory count */
+.count {
+    display: none;
+}
+
+/* widgets styles */
+.custom_widget__margin {
+    margin-top: -45px;
+}
+
+#block-27,
+#block-28 {
+    margin-bottom: 0px;
+    display: flex;
+}
+
+#block-35, #block-34 {
+    margin: 0;
+}
+
+.wp-block-media-text {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.wp-block-media-text .wp-block-media-text__content {
+    padding-top: 0px;
+    padding-right: 2%;
+    padding-bottom: 0px;
+    padding-left: 2%;
+}
+
+@media(max-width: 840px) {
+    .wp-block-media-text__media img {
+        width: 80%;
+    }
+
+    .wp-block-media-text__content {
+        font-size: 12px;
+    }
+}
+
+/* custom info styles */
+.custom_info__title {
+    font-size: 27px;
 }

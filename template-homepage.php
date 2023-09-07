@@ -23,7 +23,7 @@ get_header(); ?>
 		 * Functions hooked in to homepage action
 		 *
 		 * @hooked storefront_homepage_content      - 10
-		 * @hooked     - 20
+		 * @hooked storefront_product_categories    - 20
 		 * @hooked storefront_recent_products       - 30
 		 * @hooked storefront_featured_products     - 40
 		 * @hooked storefront_popular_products      - 50
@@ -32,32 +32,55 @@ get_header(); ?>
 		 */
 		do_action('homepage');
 		?>
+		<section id="custom_posts">
+			<h2 class="custom-section-title">Блоги та новини</h2>
 
-		<h2 class="custom-section-title">Блоги та новини</h2>
+			<div class="custom_posts">
+				<?php
+				$args = array(
+					'post_type' => 'post',
+					'category_name' => 'news',
+					'posts_per_page' => 4
+				);
+				$query = new WP_Query($args);
+				if ($query->have_posts()) :
+					while ($query->have_posts()) :
+						$query->the_post();
+				?>
+						<div class="custom_posts_card">
+							<div class="custom_posts_card__image">
+								<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium'); ?></a>
+							</div>
+							<div class="custom_posts_card__title"><?php the_title(); ?></div>
+							<div class="custom_posts_card__content"><?php the_excerpt(); ?></div>
+							<div class="custom_posts_card__button"><a href="<?php the_permalink(); ?>">Читати</a></div>
 
-		<div class="custom_posts">
-			<?php
-			$args = array(
-				'post_type' => 'post',
-				'posts_per_page' => 4
-			);
-			$query = new WP_Query($args);
-			if ($query->have_posts()) :
-				while ($query->have_posts()) :
-					$query->the_post();
-			?>
-					<div class="custom_posts_card">
-						<div class="custom_posts_card__image">
-							<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium'); ?></a>
 						</div>
-						<div class="custom_posts_card__title"><?php the_title(); ?></div>
-						<div class="custom_posts_card__content"><?php the_excerpt(); ?></div>
-						<div class="custom_posts_card__button"><a href="<?php the_permalink(); ?>">Читати</a></div>
+					<?php endwhile; ?>
+				<?php endif; ?>
+			</div>
+		</section>
 
+		<?php
+		$args2 = array(
+			'post_type' => 'post',
+			'category_name' => 'info',
+			'posts_per_page' => -1
+		);
+		$query2 = new WP_Query($args2);
+		if ($query2->have_posts()) :
+			while ($query2->have_posts()) :
+				$query2->the_post();
+		?>
+				<section id="custom_info">
+					<h2 class="custom-section-title">Інформація</h2>
+					<div class="custom_info">
+						<div class="custom_info__title"><?php the_title(); ?></div>
+						<div class="custom_info__content"><?php the_content(); ?></div>
 					</div>
-				<?php endwhile; ?>
-			<?php endif; ?>
-		</div>
+				</section>
+			<?php endwhile; ?>
+		<?php endif; ?>
 
 	</main><!-- #main -->
 </div><!-- #primary -->
