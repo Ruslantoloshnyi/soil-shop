@@ -13,11 +13,13 @@ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
 #custom_posts {
     margin-bottom: 5rem;
 }
+
 @media(max-width:767px) {
     #custom_posts {
         margin-bottom: 2rem;
     }
 }
+
 .custom-section-title {
     text-align: center;
     margin-bottom: 1em;
@@ -144,7 +146,8 @@ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
     display: flex;
 }
 
-#block-35, #block-34 {
+#block-35,
+#block-34 {
     margin: 0;
 }
 
@@ -175,4 +178,50 @@ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
 /* custom info styles */
 .custom_info__title {
     font-size: 27px;
+}
+
+/* copyright styles */
+.copyright {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+@media(max-width: 767px) {
+    .copyright {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+}
+
+/* remove currence symbol */
+/* .woocommerce-Price-currencySymbol {
+    display: none;
+} */
+
+.custom_shop__image img {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+}
+
+.input-text {
+    border-radius: 5px;
+}
+
+/* logo block styles */
+.custom_logo {
+    font-family: "Source Sans Pro", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 2em;
+}
+
+.custom_logo a {
+    text-decoration: none;
+}
+.custom_logo a:hover {
+    text-decoration: none;
+}
+.custom_logo a:visited {
+    text-decoration: none;
 }

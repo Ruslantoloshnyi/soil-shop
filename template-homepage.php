@@ -61,26 +61,31 @@ get_header(); ?>
 			</div>
 		</section>
 
-		<?php
-		$args2 = array(
-			'post_type' => 'post',
-			'category_name' => 'info',
-			'posts_per_page' => -1
-		);
-		$query2 = new WP_Query($args2);
-		if ($query2->have_posts()) :
-			while ($query2->have_posts()) :
-				$query2->the_post();
-		?>
-				<section id="custom_info">
-					<h2 class="custom-section-title">Інформація</h2>
+		<section id="custom_info">
+			<?php
+			$category_info = get_category_by_slug('info');
+			if ($category_info) :
+			?>
+				<h2 class="custom-section-title">Інформація</h2>
+			<?php endif; ?>
+			<?php
+			$args2 = array(
+				'post_type' => 'post',
+				'category_name' => 'info',
+				'posts_per_page' => -1
+			);
+			$query2 = new WP_Query($args2);
+			if ($query2->have_posts()) :
+				while ($query2->have_posts()) :
+					$query2->the_post();
+			?>
 					<div class="custom_info">
 						<div class="custom_info__title"><?php the_title(); ?></div>
 						<div class="custom_info__content"><?php the_content(); ?></div>
 					</div>
-				</section>
-			<?php endwhile; ?>
-		<?php endif; ?>
+		</section>
+	<?php endwhile; ?>
+<?php endif; ?>
 
 	</main><!-- #main -->
 </div><!-- #primary -->
