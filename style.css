@@ -20,6 +20,20 @@ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
     }
 }
 
+.button {
+    border-radius: 5px;
+}
+
+.added_to_cart {
+    border-radius: 5px;
+}
+
+.woocommerce-loop-product__title {
+    /* max-height: 4em; */
+    height: 3em;
+    max-height: 3em;
+}
+
 .custom-section-title {
     text-align: center;
     margin-bottom: 1em;
@@ -67,6 +81,7 @@ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
     padding: 8px 40px;
     margin-top: 20px;
     margin-bottom: 3px;
+    border-radius: 5px;
 }
 
 .custom_posts_card__button a:hover {
@@ -214,9 +229,11 @@ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
 .custom_logo a {
     text-decoration: none;
 }
+
 .custom_logo a:hover {
     text-decoration: none;
 }
+
 .custom_logo a:visited {
     text-decoration: none;
 }
@@ -226,3 +243,118 @@ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
     border-radius: 5px;
 }
 
+/*Homepage Grid section*/
+.front-grid {
+    margin-bottom: 5rem;
+}
+
+@media(max-width:767px) {
+    .front-grid {
+        margin-bottom: 2rem;
+    }
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 300px);
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+    grid-template-areas:
+        "post-1 post-1 post-2"
+        "post-3 post-4 post-4"
+        "post-5 post-6 post-7"
+}
+
+.front-grid-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.8);
+    border-radius: 5px;
+}
+
+@media (max-width: 988px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(7, 300px);
+        grid-column-gap: 30px;
+        grid-row-gap: 30px;
+        grid-template-areas:
+            "post-1"
+            "post-2"
+            "post-3"
+            "post-4"
+            "post-5"
+            "post-6"
+            "post-7";
+    }
+
+    .front-grid-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+}
+
+.front-grid-item1 {
+    grid-area: post-1;
+}
+
+.front-grid-item2 {
+    grid-area: post-2;
+}
+
+.front-grid-item3 {
+    grid-area: post-3;
+}
+
+.front-grid-item4 {
+    grid-area: post-4;
+}
+
+.front-grid-item5 {
+    grid-area: post-5;
+}
+
+.front-grid-item6 {
+    grid-area: post-6;
+}
+
+.front-grid-item7 {
+    grid-area: post-7;
+}
+
+.front-grid-item1,
+.front-grid-item2,
+.front-grid-item3,
+.front-grid-item4,
+.front-grid-item5,
+.front-grid-item6,
+.front-grid-item7 {
+    position: relative;
+}
+
+.front-grid__text {
+    position: absolute;
+    width: 80%;
+    top: 30%;
+    left: 20%;
+    font-size: 2vw;
+    color: #ffff;
+    font-family: Caveat, cursive;
+}
+
+@media(max-width: 988px) {
+    .front-grid__text {
+        font-size: 3vw;
+    }
+}
+
+@media(max-width: 600px) {
+    .front-grid__text {
+        font-size: 4vw;
+    }
+}

@@ -9,6 +9,7 @@
  * https://wordpress.org/plugins/homepage-control/
  *
  * Template name: Homepage
+ * Template post type: page
  *
  * @package storefront
  */
@@ -57,6 +58,7 @@ get_header(); ?>
 
 						</div>
 					<?php endwhile; ?>
+					<?php wp_reset_postdata(); ?>
 				<?php endif; ?>
 			</div>
 		</section>
@@ -85,6 +87,7 @@ get_header(); ?>
 					</div>
 		</section>
 	<?php endwhile; ?>
+	<?php wp_reset_postdata(); ?>
 <?php endif; ?>
 
 	</main><!-- #main -->
