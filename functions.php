@@ -199,7 +199,7 @@ function custom_after_cart()
                             <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium'); ?></a>
                         </div>
                         <div class="custom_posts_card__content"><?php the_title(); ?></div>
-                        <div class="woocommerce star-rating"></div>
+                        <div class="woocommerce star-rating star-rating-center"><?php echo wc_get_rating_html($product->get_average_rating()); ?></div>
                         <div class="custom_posts_card__content"><?php echo $product->get_price(); ?> грн</div>
                     </div>
                 <?php endwhile; ?>

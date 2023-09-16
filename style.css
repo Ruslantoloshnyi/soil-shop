@@ -39,6 +39,15 @@ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
     margin-bottom: 1em;
 }
 
+.custom-section-title a {
+    text-decoration: none;
+    color: #333333;
+}
+
+.custom-section-title a:hover {
+    color: #7f54b3;
+}
+
 .custom_posts {
     display: flex;
     justify-content: space-between;
@@ -119,12 +128,11 @@ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
 
 @media (max-width: 767px) {
     .custom_posts {
-        display: flex;
-        flex-direction: column;
+        display: flex;        
     }
 
     .custom_posts_card {
-        width: 100%;
+        width: 47%;
         margin-bottom: 60px;
     }
 
@@ -137,6 +145,15 @@ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
     .n2_clear {
         margin-bottom: -20px;
     }
+
+    .custom_posts {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .custom_posts_card {
+        width: 100%;       
+    }
 }
 
 @media (max-width: 400px) {
@@ -145,12 +162,54 @@ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
     }
 }
 
+
+.star-rating-center {
+    margin-left: 30%;
+}
+@media(max-width: 1100px) {
+    .star-rating-center {
+        margin-left: 25%;
+    }
+}
+
+@media(max-width: 886px) {
+    .star-rating-center {
+        margin-left: 20%;
+    }
+}
+
+@media(max-width: 767px) {
+    .star-rating-center {
+        margin-left: 35%;
+    }
+}
+
+@media(max-width: 630px) {
+    .star-rating-center {
+        margin-left: 30%;
+    }
+}
+
+@media(max-width: 500px) {
+    .star-rating-center {
+        margin-left: 39%;
+    }
+}
+
+@media(max-width: 400px) {
+    .star-rating-center {
+        margin-left: 35%;
+    }
+}
+
+
+
 /* remove catagory count */
 .count {
     display: none;
 }
 
-/* widgets styles */
+/* footer styles */
 .custom_widget__margin {
     margin-top: -45px;
 }
@@ -180,14 +239,12 @@ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
     padding-left: 2%;
 }
 
-@media(max-width: 840px) {
-    .wp-block-media-text__media img {
-        width: 80%;
-    }
+.wp-block-media-text__media img {
+    width: 80%;
+}
 
-    .wp-block-media-text__content {
-        font-size: 12px;
-    }
+.copyright {
+    font-size: 0.8rem;
 }
 
 /* custom info styles */
@@ -274,7 +331,7 @@ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
     border-radius: 5px;
 }
 
-@media (max-width: 988px) {
+@media (max-width: 768px) {
     .grid-container {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
