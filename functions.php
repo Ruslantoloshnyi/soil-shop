@@ -1,5 +1,21 @@
 <?php
 
+// function enqueue_custom_js()
+// {
+//     wp_enqueue_script('custom-checkout', get_theme_file_uri() . '/assets/js/custom-checkout.js', array('jquery'), '1.0', true);
+// }
+// add_action('wp_enqueue_scripts', 'enqueue_custom_js');
+
+function enqueue_custom_js_for_checkout()
+{
+    if (is_checkout()) {
+        wp_enqueue_script('custom-checkout', get_stylesheet_directory_uri() . '/assets/js/custom-checkout.js', array('jquery'), '1.0', true);
+    }
+}
+add_action('wp_enqueue_scripts', 'enqueue_custom_js_for_checkout');
+
+
+
 // Remoove woocommerce hoocks
 function art_remove_action()
 {
