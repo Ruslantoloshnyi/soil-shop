@@ -21,8 +21,11 @@ function art_remove_action()
 {
     remove_action('storefront_homepage', 'storefront_homepage_header', 10);
     // remove_action('storefront_homepage', 'storefront_page_content', 20);
-    // remove_action('homepage', 'storefront_recent_products', 30);
-    // remove_action('homepage', 'storefront_popular_products', 50);
+    remove_action('homepage', 'storefront_product_categories', 20);
+    remove_action('homepage', 'storefront_recent_products', 30);
+    remove_action('homepage', 'storefront_popular_products', 50);
+    remove_action('homepage', 'storefront_on_sale_products', 60);
+    remove_action('homepage', 'storefront_best_selling_products', 70);
     // remove_action('storefront_before_content', 'woocommerce_breadcrumb', 10);
     remove_action('storefront_footer', 'storefront_credit', 20);
     // remove_action('woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10);
@@ -189,38 +192,35 @@ function render_custom_grid_block_content()
 }
 add_action('homepage', 'render_custom_grid_block_content', 80);
 
+function custom_recent_content()
+{
+?>
+    <section id="recent_products">
+        <h2 class="custom-section-title"><a href="<?php echo get_permalink('248'); ?>">Новинки</a></h2>
+        <?php echo do_shortcode('[wcpcsu id="265"]'); ?>
+    </section>
+<?php
+}
+add_action('homepage', 'custom_recent_content', 75);
+
+function custom_popular_content()
+{
+?>
+    <section id="popular_products">
+        <h2 class="custom-section-title"><a href="<?php echo get_permalink('248'); ?>">Часто купують</a></h2>
+        <?php echo do_shortcode('[wcpcsu id="267"]'); ?>
+    </section>
+<?php
+}
+add_action('homepage', 'custom_popular_content', 76);
+
 /* register custom after cart hoock */
 function custom_after_cart()
 {
 ?>
     <section id="custom_posts">
         <h2 class="custom-section-title">Вас може зацікавити</h2>
-
-        <div class="custom_posts">
-            <?php
-            $args = array(
-                'post_type' => 'product',
-                'posts_per_page' => 4,
-                'meta_key' => 'total_sales',
-                'orderby' => 'meta_value_num',
-            );
-            $query = new WP_Query($args);
-            if ($query->have_posts()) :
-                while ($query->have_posts()) :
-                    $query->the_post();
-                    $product = wc_get_product(get_the_ID());
-            ?>
-                    <div class="custom_posts_card">
-                        <div class="custom_posts_card__image">
-                            <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium'); ?></a>
-                        </div>
-                        <div class="custom_posts_card__content"><?php the_title(); ?></div>
-                        <div class="woocommerce star-rating star-rating-center"><?php echo wc_get_rating_html($product->get_average_rating()); ?></div>
-                        <div class="custom_posts_card__content"><?php echo $product->get_price(); ?> грн</div>
-                    </div>
-                <?php endwhile; ?>
-            <?php endif; ?>
-        </div>
+        <?php echo do_shortcode('[wcpcsu id="265"]'); ?>
     </section>
 <?php
 }

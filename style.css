@@ -77,12 +77,36 @@ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
 .product {
     border: 1px solid #ddd;
     border-radius: 5px;
+    font-family: Source Sans Pro,HelveticaNeue-Light,Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
 }
 
 .product:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     transition: all 0.2s ease-in-out;
 }
+
+.add_to_cart_inline {
+    border: none !important;    
+} 
+
+.add_to_cart_inline:hover {
+    border: none !important;
+    box-shadow: none;
+}
+
+.wpcu-product__title {
+    height: 4rem;
+}
+
+/* .product-category {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.product-category:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease-in-out;
+} */
 
 .custom_posts_card__button a {
     background-color: #eeeeee;
@@ -415,3 +439,27 @@ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
         font-size: 4vw;
     }
 }
+
+.custom-soil-card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.custom-soil-card:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease-in-out;
+}
+
+/* .button {
+    border-radius: 5px;
+    background-color: #eeeeee;
+} */
+
+/* .wpcu-button:hover {
+    background-color: #d1cfcf;
+    transition: all 0.2.5s ease-in-out;
+} */
+
+/* .button .product_type_simple .add_to_cart_button .ajax_add_to_cart {
+    border-radius: 5px;
+} */

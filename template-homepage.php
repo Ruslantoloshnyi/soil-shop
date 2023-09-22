@@ -33,6 +33,7 @@ get_header(); ?>
 		 */
 		do_action('homepage');
 		?>
+
 		<section id="custom_posts">
 			<?php $archive_post_link = get_post_type_archive_link('post'); ?>
 			<h2 class="custom-section-title"><a href="<?php echo get_permalink('248'); ?>">Блоги та новини</a></h2>
@@ -63,6 +64,8 @@ get_header(); ?>
 				<?php endif; ?>
 			</div>
 		</section>
+
+
 
 		<section id="custom_info">
 			<?php

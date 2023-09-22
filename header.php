@@ -19,6 +19,7 @@
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 	<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
 
+
 	<?php wp_head(); ?>
 </head>
 
